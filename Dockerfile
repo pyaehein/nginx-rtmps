@@ -1,10 +1,8 @@
 FROM buildpack-deps:bullseye
 
-LABEL maintainer="Thiago Lima <contact@thiagoemmanuel.com>"
-
 # Versions of Nginx and nginx-rtmp-module to use
-ENV NGINX_VERSION nginx-1.18.0
-ENV NGINX_RTMP_MODULE_VERSION 1.2.1
+ENV NGINX_VERSION nginx-1.26.1
+ENV NGINX_RTMP_MODULE_VERSION 1.2.2
 
 # Install dependencies Stunnel4
 RUN apt-get update && \
@@ -88,7 +86,7 @@ ENV CLOUDFLARE_URL rtmp://127.0.0.1:19352/live/
 ENV CLOUDFLARE_KEY ""
 
 #Twitch
-ENV TWITCH_URL ""
+ENV TWITCH_URL rtmp://bkk02.contribute.live-video.net/app/
 ENV TWITCH_KEY ""
 
 #Kick
